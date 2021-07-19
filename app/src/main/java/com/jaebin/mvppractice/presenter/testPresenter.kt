@@ -1,15 +1,12 @@
 package com.jaebin.mvppractice.presenter
 
+import com.jaebin.mvppractice.model.foo
+
 class testPresenter(val view:testContract.View): testContract.Presenter {
 
 
     override fun calculator(x: Int, y: Int, type: String) {
-        val result = when(type){
-            "plus" ->x+y
-            "minus" ->x-y
-            else->0
-        }
-
+        val  result = foo.getData(x,y,type)
         view.setRes(result)
 
     }
